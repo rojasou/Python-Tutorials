@@ -8,8 +8,9 @@ yt = YouTube(input("Enter the URL of the video you want to download: \n>> "))
 # extract only audio
 video = yt.streams.filter(only_audio=True).first()
 
-# replace destination with the path where you want to save the downloaded file
-destination = r"C:\Users\bryan\Music\Music"
+# check for destination to save file
+print("Enter the destination (leave blank for current directory)")
+destination = str(input(">> ")) or '.'
 
 # download the file
 out_file = video.download(output_path=destination)
